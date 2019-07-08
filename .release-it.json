@@ -1,0 +1,21 @@
+{
+  "increment": "conventional:angular",
+  "scripts" : {
+    "beforeStart": "lint-staged && npm run test:unit && npm run readme:toc",
+    "afterBump": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog": "conventional-changelog -p angular | tail -n +3"
+  },
+  "git" : {
+    "commitMessage": "chore: release ${version}",
+    "tagName": "v${version}",
+    "tagAnnotation": "Release v${version}"
+  },
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": true,
+    "releaseName": "🚀 Release ${version}",
+    "tokenRef": "GITHUB_TOKEN"
+  }
+}
